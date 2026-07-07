@@ -130,6 +130,13 @@ address { font-style: normal; }
 .btn--sm { padding: 8px 16px; font-size: 12px; }
 .btn--lg { padding: 14px 32px; font-size: 15px; }
 .btn--xs { padding: 4px 10px; font-size: 11px; }
+
+/* タップ・クリック時の「押した感」演出（全ボタン共通） */
+.btn:active {
+  transform: scale(0.96) !important;
+  transition: transform 0.08s ease !important;
+  box-shadow: none !important;
+}
 .btn--full { width: 100%; }
 
 /* ===== NAV ===== */

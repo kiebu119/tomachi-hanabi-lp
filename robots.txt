@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kiebu119.github.io/tomachi-hanabi-lp/sitemap.xml
