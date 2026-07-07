@@ -497,6 +497,12 @@ address { font-style: normal; }
 .chara-guide--right .chara-guide__bubble {
   border-radius: 12px 12px 0 12px;
 }
+.chara-guide__voice-hint {
+  font-size: 11px;
+  color: var(--orange);
+  margin-top: 6px;
+  margin-left: 4px;
+}
 
 /* ===== FLOAT ANIMATION ===== */
 @keyframes float {
@@ -514,6 +520,40 @@ address { font-style: normal; }
 }
 [data-voice].is-playing .chara-guide__bubble {
   border-color: var(--orange);
+}
+
+/* タップで音声が鳴ることを示すバッジ */
+[data-voice] .chara-guide__bubble,
+[data-voice] .fv__chara-bubble {
+  position: relative;
+}
+[data-voice] .chara-guide__bubble::after,
+[data-voice] .fv__chara-bubble::after {
+  content: "🔊";
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  background: var(--orange);
+  color: var(--white);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  animation: voice-badge-pulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+[data-voice].is-playing .chara-guide__bubble::after,
+[data-voice].is-playing .fv__chara-bubble::after {
+  animation: none;
+  background: var(--orange-dark, var(--orange));
+}
+@keyframes voice-badge-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.18); opacity: 0.85; }
 }
 @keyframes voice-pulse {
   0%, 100% { transform: scale(1); }
@@ -1425,6 +1465,10 @@ address { font-style: normal; }
 @media (prefers-reduced-motion: reduce) {
   .fade-in { transition: none; opacity: 1; transform: none; }
   .chara-guide__bubble, .fv__chara-bubble, .yoin .chara-guide__bubble {
+    animation: none;
+  }
+  [data-voice] .chara-guide__bubble::after,
+  [data-voice] .fv__chara-bubble::after {
     animation: none;
   }
 }
