@@ -576,17 +576,19 @@ address { font-style: normal; }
   text-align: center;
 }
 .prob__icon {
-  width: 48px;
-  height: 48px;
-  background: var(--white);
-  border: 1px solid var(--border);
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--orange), #f0885f);
+  border: none;
   border-radius: 50%;
   margin: 0 auto 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--muted);
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(232, 99, 60, 0.28);
 }
+.prob__icon svg { stroke-width: 1.6; }
 .prob__title {
   font-size: 14px;
   font-weight: 700;
@@ -636,9 +638,18 @@ address { font-style: normal; }
   margin-bottom: 12px;
 }
 .sol__icon {
-  color: var(--navy);
-  margin-bottom: 12px;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--navy), #2a3d63);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+  margin-bottom: 14px;
+  box-shadow: 0 4px 12px rgba(27, 42, 74, 0.25);
 }
+.sol__icon svg { stroke-width: 1.6; }
 .sol__title {
   font-family: 'Shippori Mincho', serif;
   font-size: 16px;
@@ -1096,7 +1107,7 @@ address { font-style: normal; }
 
 /* ===== CTA SECTION ===== */
 .cta-section {
-  background: var(--navy);
+  background: linear-gradient(rgba(27,42,74,0.88), rgba(27,42,74,0.93)), url('img/hanabi-main.png') center/cover no-repeat;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1254,7 +1265,7 @@ address { font-style: normal; }
 
 /* ===== YOIN ===== */
 .yoin {
-  background: var(--navy);
+  background: linear-gradient(rgba(27,42,74,0.88), rgba(27,42,74,0.93)), url('img/hanabi-main.png') center/cover no-repeat;
   padding: 60px 24px;
   text-align: center;
 }
