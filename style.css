@@ -836,6 +836,20 @@ address { font-style: normal; }
   height: 200px;
   background: var(--cream-dark);
   overflow: hidden;
+  position: relative;
+}
+.stay__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.04);
+}
+.stay__img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(27,42,74,0) 45%, rgba(27,42,74,0.38) 100%);
+  pointer-events: none;
 }
 .stay__body { padding: 16px; }
 .stay__type {
@@ -909,6 +923,19 @@ address { font-style: normal; }
   background: var(--cream-dark);
   overflow: hidden;
   position: relative;
+}
+.food__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.04);
+}
+.food__img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(27,42,74,0) 45%, rgba(27,42,74,0.38) 100%);
+  pointer-events: none;
 }
 .food__badge {
   position: absolute;
@@ -1009,6 +1036,8 @@ address { font-style: normal; }
   border-radius: var(--radius-card);
   overflow: hidden;
   min-height: 240px;
+  border: 3px solid var(--navy);
+  box-shadow: 0 6px 18px rgba(27,42,74,0.18);
 }
 .access__map-placeholder {
   width: 100%;
