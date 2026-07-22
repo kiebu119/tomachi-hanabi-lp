@@ -1534,11 +1534,13 @@ address { font-style: normal; }
   width: 250px;
   height: auto;
   object-fit: contain;
+  filter: drop-shadow(0 10px 14px rgba(0,0,0,0.35));
 }
 .chara-guide__icon {
   width: 150px;
   height: auto;
   object-fit: contain;
+  filter: drop-shadow(0 6px 10px rgba(27,42,74,0.25));
 }
 .chara-guide__icon--video {
   border-radius: var(--radius-card);
@@ -1552,6 +1554,7 @@ address { font-style: normal; }
   width: 48px;
   height: auto;
   object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
 }
 .sol__header-wrap {
   display: flex;
