@@ -573,7 +573,7 @@ address { font-style: normal; }
   background-color: var(--navy);
   background-image: url('img/pattern-flower.png');
   background-repeat: repeat;
-  border: 3px solid var(--orange);
+  border: 1px solid rgba(232, 99, 60, 0.45);
   border-radius: 24px;
   padding: 16px 18px 16px 16px;
   display: flex;
@@ -582,9 +582,10 @@ address { font-style: normal; }
   text-align: left;
 }
 .prob__chara {
-  width: 96px;
-  height: auto;
+  width: 140px;
+  height: 160px;
   object-fit: contain;
+  object-position: center bottom;
   flex-shrink: 0;
 }
 .prob__body { flex: 1; }
@@ -619,46 +620,49 @@ address { font-style: normal; }
 .sol__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
   gap: 16px;
 }
 .sol__card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-card);
-  padding: 28px 24px;
-  position: relative;
-}
-.sol__num {
-  font-family: 'Shippori Mincho', serif;
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--cream-dark);
-  line-height: 1;
-  margin-bottom: 12px;
-}
-.sol__icon {
-  width: 52px;
-  height: 52px;
-  background: linear-gradient(135deg, var(--navy), #2a3d63);
-  border-radius: 50%;
+  background-color: var(--navy);
+  background-image: url('img/pattern-flower.png');
+  background-repeat: repeat;
+  border: 1px solid rgba(232, 99, 60, 0.45);
+  border-radius: 24px;
+  padding: 16px 18px 16px 16px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: var(--cream);
-  margin-bottom: 14px;
-  box-shadow: 0 4px 12px rgba(27, 42, 74, 0.25);
+  gap: 16px;
+  text-align: left;
+  position: relative;
 }
-.sol__icon svg { stroke-width: 1.6; }
+.sol__chara {
+  width: 140px;
+  height: 160px;
+  object-fit: contain;
+  object-position: center bottom;
+  flex-shrink: 0;
+}
+.sol__body { flex: 1; }
+.sol__num {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 6px;
+}
 .sol__title {
   font-family: 'Shippori Mincho', serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 8px;
+  color: var(--cream);
+  margin-bottom: 6px;
 }
 .sol__desc {
   font-size: 12px;
-  color: var(--muted);
+  color: rgba(255,246,229,0.65);
   line-height: 1.65;
 }
 
