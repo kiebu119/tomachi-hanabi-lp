@@ -569,36 +569,34 @@ address { font-style: normal; }
   margin-bottom: 24px;
 }
 .prob__card {
-  background: var(--cream);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-card);
-  padding: 24px 20px;
-  text-align: center;
-}
-.prob__icon {
-  width: 52px;
-  height: 52px;
-  background: linear-gradient(135deg, var(--orange), #f0885f);
-  border: none;
-  border-radius: 50%;
-  margin: 0 auto 12px;
+  background-color: var(--navy);
+  background-image: url('img/pattern-flower.png');
+  background-repeat: repeat;
+  border: 3px solid var(--orange);
+  border-radius: 24px;
+  padding: 20px 20px 20px 16px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: var(--white);
-  box-shadow: 0 4px 12px rgba(232, 99, 60, 0.28);
+  gap: 16px;
+  text-align: left;
 }
-.prob__icon svg { stroke-width: 1.6; }
+.prob__chara {
+  width: 96px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.prob__body { flex: 1; }
 .prob__title {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--cream);
   margin-bottom: 6px;
   font-family: 'Shippori Mincho', serif;
 }
 .prob__desc {
   font-size: 12px; /* 指示書：12pxに統一 */
-  color: var(--muted);
+  color: rgba(255,246,229,0.65);
   line-height: 1.65; /* 指示書：行高を1.65に拡張して窮屈さを解消 */
 }
 .prob__arrow {
