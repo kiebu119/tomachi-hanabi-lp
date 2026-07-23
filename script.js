@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHamburger();
   initSmoothScroll();
   initVoicePlayback();
+  initBubbleSlide();
 });
 
 // ===== NAV スクロール =====
@@ -180,6 +181,51 @@ function initVoicePlayback() {
         play();
       }
     });
+  });
+}
+
+// ===== 吹き出し：2つ目の台詞をスライドで切り替え =====
+// .bubble-slide の data-line2 に台詞を入れると、数秒おきに
+// 元の台詞と data-line2 をスライドアニメーションで交互表示する。
+function initBubbleSlide() {
+  const bubbles = document.querySelectorAll('.bubble-slide');
+  if (!bubbles.length) return;
+
+  bubbles.forEach((bubble) => {
+    const line2 = bubble.dataset.line2;
+    if (!line2) return;
+
+    const line1Html = bubble.innerHTML;
+    const line2Html = line2;
+
+    const viewport = document.createElement('span');
+    viewport.className = 'bubble-slide__viewport';
+
+    const line = document.createElement('span');
+    line.className = 'bubble-slide__line';
+    line.innerHTML = line1Html;
+
+    bubble.innerHTML = '';
+    viewport.appendChild(line);
+    bubble.appendChild(viewport);
+
+    let showingLine2 = false;
+
+    setInterval(() => {
+      line.classList.add('is-out-up');
+      window.setTimeout(() => {
+        showingLine2 = !showingLine2;
+        line.innerHTML = showingLine2 ? line2Html : line1Html;
+        line.classList.remove('is-out-up');
+        line.classList.add('is-in-down');
+        // 次のフレームでtranslateYを0に戻してスライドインさせる
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            line.classList.remove('is-in-down');
+          });
+        });
+      }, 400);
+    }, 4000);
   });
 }
 

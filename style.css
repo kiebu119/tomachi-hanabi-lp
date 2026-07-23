@@ -1581,3 +1581,21 @@ address { font-style: normal; }
     margin-bottom: 24px;
   }
 }
+
+/* ===== 吹き出し：2つ目の台詞をスライド切り替え ===== */
+.bubble-slide__viewport {
+  display: block;
+  overflow: hidden;
+}
+.bubble-slide__line {
+  display: block;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.bubble-slide__line.is-out-up {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.bubble-slide__line.is-in-down {
+  transform: translateY(100%);
+  opacity: 0;
+}
