@@ -660,6 +660,7 @@ address { font-style: normal; }
   color: var(--cream);
   margin-bottom: 6px;
 }
+.sol__title .nowrap { white-space: nowrap; }
 .sol__desc {
   font-size: 12px;
   color: rgba(255,246,229,0.65);
